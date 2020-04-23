@@ -28,10 +28,10 @@ public class PackageController {
 
     @GetMapping("/api/v1/package/{id}")
     @ResponseStatus(value = HttpStatus.CREATED)
-    public Optional<Package> getPackage(@PathVariable String id) {
+    public Optional<Package> getPackage(@PathVariable Long id) {
 
         Package p = new Package();
-        long val = Long.getLong(id).longValue();
+        long val = id.longValue();
         return repository.findById(val);
     }
 
